@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ClassLibrary1\HotelHub.Domain.csproj" />
+    <ProjectReference Include="..\HotelHub.persistance\HotelHub.persistance.csproj" />
+    <ProjectReference Include="..\HotelHub.Serviceinterfaces\HotelHub.Serviceinterfaces.csproj" />
+  </ItemGroup>
+
+</Project>

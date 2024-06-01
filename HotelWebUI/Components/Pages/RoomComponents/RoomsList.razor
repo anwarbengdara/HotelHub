@@ -1,0 +1,81 @@
+﻿@page "/Rooms/"
+@rendermode InteractiveServer
+
+@using HotelHub.Domain.entities
+@using HotelHub.Serviceinterfaces 
+
+
+<h3>Rooms</h3>
+
+<button class="btn btn-primary" @onclick="ShowAddModal">Add New Book</button>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>RoomNumber</th>
+            <th>Type</th>
+            <th>Price</th>
+            <th>IsAvailable</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var room in rooms)
+        {
+            <tr>
+                <td>@room.RoomNumber</td>
+                <td>@room.Type</td>
+                <td>@room.Price</td>
+                <td>@room.IsAvailable</td>
+                <td>
+                    <button class="btn btn-secondary" @onclick="() => ShowEditModal(room)">Edit</button>
+                    <button class="btn btn-danger" @onclick="() => DeleteRoom(room)">Delete</button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+        
+
+
+@code {
+   
+        [Inject] iRoomService RoomService { get; set; }
+
+        private List<Room> rooms;
+
+       // private AddEditRoomModal addEditRoomModal;
+
+        protected override void OnInitialized()
+        {
+            LoadRooms();
+        }
+
+        private void LoadRooms()
+        {
+            rooms = RoomService.GetAll();
+        }
+
+        private void ShowAddModal()
+        {
+           // addEditRoomModal.Show(new Room());
+        }
+
+        private void ShowEditModal(Room room)
+        {
+           // addEditRoomModal.Show(room);
+        }
+
+        private void DeleteRoom(Room room)
+        {
+            RoomService.Delete(room);
+            LoadRooms();
+        }
+
+        private void RefreshList()
+        {
+            LoadRooms();
+        }
+   
+
+}
