@@ -22,7 +22,7 @@ namespace HotelHub.Service
 
         public async Task Save(Room room)
         {
-            using var db = _contextFactory.CreateDbContext();
+            using var db = _contextFactory.CreateDbContext();//
 
             var tmp = await db.Rooms.FirstOrDefaultAsync(x => x.RoomID == room.RoomID);
 
