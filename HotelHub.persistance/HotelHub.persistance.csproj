@@ -16,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ClassLibrary1\HotelHub.Domain.csproj" />
+    <ProjectReference Include="..\HotelHub.Domain\HotelHub.Domain.csproj" />
   </ItemGroup>
 
 </Project>

@@ -5,13 +5,13 @@ VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HotelWebUI", "HotelWebUI\HotelWebUI.csproj", "{3051205C-2561-404C-8F3A-683F7619DBFC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HotelHub.Domain", "ClassLibrary1\HotelHub.Domain.csproj", "{948E21F8-9CF7-49D5-B737-AF4F4D4A8D9D}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HotelHub.persistance", "HotelHub.persistance\HotelHub.persistance.csproj", "{D8635C66-EC5B-4A0C-BE0C-E029B4A4BF5B}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HotelHub.Service", "HotelHub.Service\HotelHub.Service.csproj", "{D1C520E1-E9A9-4891-89AC-34CFEAA6E693}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HotelHub.Serviceinterfaces", "HotelHub.Serviceinterfaces\HotelHub.Serviceinterfaces.csproj", "{ECA33FDE-F6CB-427A-B185-77F107B43017}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotelHub.Domain", "HotelHub.Domain\HotelHub.Domain.csproj", "{41775FC9-EF21-4340-96FF-2965304F331D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,6 @@ Global
 		{3051205C-2561-404C-8F3A-683F7619DBFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3051205C-2561-404C-8F3A-683F7619DBFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3051205C-2561-404C-8F3A-683F7619DBFC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{948E21F8-9CF7-49D5-B737-AF4F4D4A8D9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{948E21F8-9CF7-49D5-B737-AF4F4D4A8D9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{948E21F8-9CF7-49D5-B737-AF4F4D4A8D9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{948E21F8-9CF7-49D5-B737-AF4F4D4A8D9D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D8635C66-EC5B-4A0C-BE0C-E029B4A4BF5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D8635C66-EC5B-4A0C-BE0C-E029B4A4BF5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D8635C66-EC5B-4A0C-BE0C-E029B4A4BF5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -39,6 +35,10 @@ Global
 		{ECA33FDE-F6CB-427A-B185-77F107B43017}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ECA33FDE-F6CB-427A-B185-77F107B43017}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ECA33FDE-F6CB-427A-B185-77F107B43017}.Release|Any CPU.Build.0 = Release|Any CPU
+		{41775FC9-EF21-4340-96FF-2965304F331D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{41775FC9-EF21-4340-96FF-2965304F331D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{41775FC9-EF21-4340-96FF-2965304F331D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{41775FC9-EF21-4340-96FF-2965304F331D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

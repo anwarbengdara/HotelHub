@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ClassLibrary1\HotelHub.Domain.csproj" />
+    <ProjectReference Include="..\HotelHub.Domain\HotelHub.Domain.csproj" />
     <ProjectReference Include="..\HotelHub.persistance\HotelHub.persistance.csproj" />
     <ProjectReference Include="..\HotelHub.Serviceinterfaces\HotelHub.Serviceinterfaces.csproj" />
   </ItemGroup>
