@@ -4,8 +4,9 @@ namespace HotelHub.Serviceinterfaces
 {
     public interface ihotelService
     {
-        void Save(Hotel hotel);
-        Hotel Get(int hotelid); 
-        void Update(Hotel hotel);
+        Task Save(Hotel hotel); 
+        Task<Hotel> Get(int hotelid); 
+        Task Update(Hotel hotel); 
+        Task Delete(int hotelid);
     }
 }

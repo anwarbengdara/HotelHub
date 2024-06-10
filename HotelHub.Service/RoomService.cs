@@ -20,52 +20,52 @@ namespace HotelHub.Service
             _contextFactory = dbContextFactory;
         }
 
-        public void Save(Room room)
+        public async Task Save(Room room)
         {
             using var db = _contextFactory.CreateDbContext();
 
-            var tmp = db.Rooms.FirstOrDefault(x => x.RoomID == room.RoomID);
+            var tmp = await db.Rooms.FirstOrDefaultAsync(x => x.RoomID == room.RoomID);
 
             if (tmp == null)
             {
                 db.Rooms.Add(room);
-                db.SaveChanges();
+                db.SaveChangesAsync();
             }
         }
 
-        public void Delete(Room room)
+        public async Task Delete(Room room)
         {
             using var db = _contextFactory.CreateDbContext();
 
-            var tmp = db.Rooms.FirstOrDefault(x => x.RoomID == room.RoomID);
+            var tmp = await db.Rooms.FirstOrDefaultAsync(x => x.RoomID == room.RoomID);
 
             if (tmp != null)
             {
                 db.Rooms.Remove(tmp);
-                db.SaveChanges();
+                db.SaveChangesAsync();
             }
         }
 
-        public Room Get(int roomid)
+        public async Task<Room> Get(int roomid)
         {
             using var db = _contextFactory.CreateDbContext();
 
-            var room = db.Rooms.FirstOrDefault(x => x.RoomID == roomid);
+            var room = await db.Rooms.FirstOrDefaultAsync(x => x.RoomID == roomid);
             return room;
         }
 
-        public List<Room> GetAll()
+        public async Task<List<Room>> GetAll()
         {
             using var db = _contextFactory.CreateDbContext();
 
-            return [.. db.Rooms];
+            return [.. await db.Rooms.ToListAsync()];
         }
 
-        public void Update(Room room)
+        public async Task Update(Room room)
         {
             using var db = (_contextFactory.CreateDbContext());
 
-            var tmp = db.Rooms.FirstOrDefault(x => x.RoomID == room.RoomID);
+            var tmp = await db.Rooms.FirstOrDefaultAsync(x => x.RoomID == room.RoomID);
 
             if (tmp != null)
             {
@@ -74,7 +74,7 @@ namespace HotelHub.Service
                 tmp.Price = room.Price;
                 tmp.IsAvailable = room.IsAvailable;
 
-                db.SaveChanges();
+                db.SaveChangesAsync();
             }
         }
     }

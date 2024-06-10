@@ -17,7 +17,6 @@ namespace HotelHub.Domain.entities
         public string PhoneNumber { get; set; }       // رقم هاتف الفندق
         public string Email { get; set; }             // البريد الإلكتروني للفندق
         public decimal Rating { get; set; }           // تقييم الفندق
-                                                      // public string ImageUrl { get; set; }          // رابط لصورة الفندق
         public List<Room> Rooms { get; set; }         // قائمة الغرف المرتبطة بهذا الفندق
 
 

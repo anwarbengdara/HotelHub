@@ -18,18 +18,18 @@ namespace HotelHub.Service
         {
             _contextFactory = contextFactory;
         }
-        public Hotel Get(int hotelid)
+        public async Task<Hotel> Get(int hotelid)
         {
             using var db = _contextFactory.CreateDbContext();
 
-            var hotel = db.Hotel.FirstOrDefault(x => x.HotelID == hotelid);
+            var hotel =await db.Hotel.FirstOrDefaultAsync(x => x.HotelID == hotelid);
             return hotel;
-        }
-        public void Update(Hotel hotel)
+        } 
+        public async Task Update(Hotel hotel)
         {
-            using var db = _contextFactory.CreateDbContext();
+            using var db =  _contextFactory.CreateDbContext();
 
-            var tmp = db.Hotel.FirstOrDefault(y => y.HotelID == hotel.HotelID);
+            var tmp = await db.Hotel.FirstOrDefaultAsync(y => y.HotelID == hotel.HotelID);
 
             if (tmp != null)
             {
@@ -38,22 +38,33 @@ namespace HotelHub.Service
                 tmp.Name = hotel.Name;
                 tmp.Rating = hotel.Rating;
 
-                db.SaveChanges();
+                db.SaveChangesAsync();
             }
         }
-        public void Save(Hotel hotel)
+        public async Task Save(Hotel hotel)
         {
             using var db = _contextFactory.CreateDbContext();
 
-            var tmp = db.Hotel.FirstOrDefault(x => x.HotelID == hotel.HotelID);
+            var tmp = await db.Hotel.FirstOrDefaultAsync(x => x.HotelID == hotel.HotelID);
 
             if (tmp == null)
             {
                 db.Hotel.Add(hotel);
-                db.SaveChanges();
+                db.SaveChangesAsync();
+            }
+        }
+        public async Task Delete(int hotel)
+        {
+            using var db = _contextFactory.CreateDbContext();
+
+            var tmp = await db.Hotel.FirstOrDefaultAsync(x => x.HotelID == hotel);
+
+            if (tmp != null)
+            {
+                db.Hotel.Remove(tmp);
+                db.SaveChangesAsync();
             }
         }
 
-        
     }
 }

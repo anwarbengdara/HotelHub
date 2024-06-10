@@ -4,11 +4,11 @@ namespace HotelHub.Serviceinterfaces
 {
     public interface iRoomService
     {
-        void Delete(Room room);
-        Room Get(int roomid);   
-        void Save(Room room);
-        void Update(Room room);
-        List<Room> GetAll();
+        Task Delete(Room room);
+        Task<Room> Get(int roomid);   
+        Task Save(Room room);
+        Task Update(Room room);
+        Task<List<Room>>  GetAll();
 
     }
 }
