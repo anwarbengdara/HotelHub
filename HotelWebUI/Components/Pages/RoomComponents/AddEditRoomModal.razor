@@ -1,0 +1,77 @@
+﻿@using HotelHub.Domain.entities
+@using HotelHub.Serviceinterfaces
+
+@if (isVisible)
+{
+    <div class="modal show" tabindex="-1" style="display: block;">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">@((room.RoomID == 0) ? "Add Room" : "Edit Room")</h5>
+                    <button type="button" class="btn-close" aria-label="Close" @onclick="Cancel"></button>
+                </div>
+                 <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="RoomNumber" class="form-label">Room Number</label>
+                        <input type="text" class="form-control" id="RoomNumber" @bind="room.RoomNumber">
+                    </div>
+                    <div class="mb-3">
+                        <label for="Type" class="form-label">Type</label>
+                        <input type="text" class="form-control" id="Type" @bind="room.Type">
+                    </div>
+                    <div class="mb-3">
+                        <label for="Price" class="form-label">Price</label>
+                        <input type="number" class="form-control" id="Price" @bind="room.Price">
+                    </div>
+                    <div class="mb-3">
+                        <label for="IsAvailable" class="form-label">IsAvailable</label>
+                        <input type="number" class="form-control" id="IsAvailable" @bind="IsAvailableAsInt" min="0" max="1">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" @onclick="Cancel">Cancel</button>
+                    <button type="button" class="btn btn-primary" @onclick="Save">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+                    }
+@code {
+
+    [Parameter] public EventCallback OnSave { get; set; }
+    [Inject] public iRoomService RoomService { get; set; }
+
+    private bool isVisible;
+
+    private Room room = new();
+
+    public void Show(Room room)
+    {
+        this.room = room;
+        isVisible = true;
+    }
+    private int IsAvailableAsInt
+    {
+        get => room.IsAvailable ? 1 : 0;
+        set => room.IsAvailable = value == 1;
+    }
+    private async Task Save()
+    {
+        if (room.RoomID == 0)
+        {
+            await RoomService.Save(room);
+        }
+        else
+        {
+            await RoomService.Update(room);
+        }
+
+        isVisible = false;
+        await OnSave.InvokeAsync();
+    }
+    private void Cancel()
+    {
+        isVisible = false;
+    }
+
+}

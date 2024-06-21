@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HotelHub.Service", "HotelHu
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HotelHub.Serviceinterfaces", "HotelHub.Serviceinterfaces\HotelHub.Serviceinterfaces.csproj", "{ECA33FDE-F6CB-427A-B185-77F107B43017}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotelHub.Domain", "HotelHub.Domain\HotelHub.Domain.csproj", "{41775FC9-EF21-4340-96FF-2965304F331D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HotelHub.Domain", "HotelHub.Domain\HotelHub.Domain.csproj", "{41775FC9-EF21-4340-96FF-2965304F331D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotelHub.Tests", "HotelHub.Tests\HotelHub.Tests.csproj", "{DDD713C7-AEFE-4A0E-8701-D5DB4607290E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{41775FC9-EF21-4340-96FF-2965304F331D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{41775FC9-EF21-4340-96FF-2965304F331D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{41775FC9-EF21-4340-96FF-2965304F331D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DDD713C7-AEFE-4A0E-8701-D5DB4607290E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDD713C7-AEFE-4A0E-8701-D5DB4607290E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDD713C7-AEFE-4A0E-8701-D5DB4607290E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDD713C7-AEFE-4A0E-8701-D5DB4607290E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,4 +1,4 @@
-﻿@page "/Rooms/"
+﻿@page "/Rooms"
 @rendermode InteractiveServer
 
 @using HotelHub.Domain.entities
@@ -8,6 +8,13 @@
 <h3>Rooms</h3>
 
 <button class="btn btn-primary" @onclick="ShowAddModal">Add New Book</button>
+
+@if (rooms == null)
+{
+    <span>Loading...</span>
+}
+else
+{
 
 <table class="table">
     <thead>
@@ -34,8 +41,9 @@
         }
     </tbody>
 </table>
-
+}
         
+<AddEditRoomModal @ref="addEditRoomModal" OnSave="RefreshList" />
 
 
 @code {
@@ -44,37 +52,37 @@
 
         private List<Room> rooms;
 
-       // private AddEditRoomModal addEditRoomModal;
+       private AddEditRoomModal addEditRoomModal;
 
-        protected override void OnInitialized()
+        protected override async Task OnInitializedAsync()
         {
-            LoadRooms();
+            await LoadRooms();
         }
 
-        private void LoadRooms()
+        private async Task LoadRooms()
         {
-            rooms = RoomService.GetAll();
+            rooms =await RoomService.GetAll();
         }
 
         private void ShowAddModal()
         {
-           // addEditRoomModal.Show(new Room());
+        addEditRoomModal.Show(new Room());
         }
 
         private void ShowEditModal(Room room)
         {
-           // addEditRoomModal.Show(room);
+        addEditRoomModal.Show(room);
         }
 
-        private void DeleteRoom(Room room)
+        private async Task DeleteRoom(Room room)
         {
-            RoomService.Delete(room);
-            LoadRooms();
+           await RoomService.Delete(room);
+            await LoadRooms();
         }
 
-        private void RefreshList()
+        private async Task RefreshList()
         {
-            LoadRooms();
+           await LoadRooms();
         }
    
 

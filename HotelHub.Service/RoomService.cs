@@ -28,8 +28,8 @@ namespace HotelHub.Service
 
             if (tmp == null)
             {
-                db.Rooms.Add(room);
-                db.SaveChangesAsync();
+               db.Rooms.Add(room);
+               await db.SaveChangesAsync();
             }
         }
 
@@ -42,7 +42,7 @@ namespace HotelHub.Service
             if (tmp != null)
             {
                 db.Rooms.Remove(tmp);
-                db.SaveChangesAsync();
+                await db.SaveChangesAsync();
             }
         }
 
@@ -74,7 +74,7 @@ namespace HotelHub.Service
                 tmp.Price = room.Price;
                 tmp.IsAvailable = room.IsAvailable;
 
-                db.SaveChangesAsync();
+               await db.SaveChangesAsync();
             }
         }
     }

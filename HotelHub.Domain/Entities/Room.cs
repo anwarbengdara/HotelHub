@@ -11,11 +11,11 @@ namespace HotelHub.Domain.entities
     {
         public int RoomID { get; set; }              // معرف فريد لكل غرفة (Primary Key)
         [MaxLength(24)]
-        public string RoomNumber { get; set; }       // رقم الغرفة (مطلوب، الحد الأقصى للطول 10 أحرف)
+        public string RoomNumber { get; set; }       // رقم الغرفة 
         [MaxLength(24)]
-        public string Type { get; set; }             // نوع الغرفة (الحد الأقصى للطول 50 حرف)
-        public decimal Price { get; set; }           // سعر الغرفة (10 أرقام، 2 منها بعد الفاصلة العشرية)77777777777777777777
-        public bool IsAvailable { get; set; }        // تحديد ما إذا كانت الغرفة متوفرة أم لا (مطلوب)
+        public string Type { get; set; }             // نوع الغرفة 
+        public decimal Price { get; set; }           // سعر الغرفة 
+        public bool IsAvailable { get; set; }        // مطلوب تحديد ما إذا كانت الغرفة متوفرة أم لا 
         public Hotel Hotel { get; set; }             // العلاقة مع الفندق
     }
 }
