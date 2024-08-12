@@ -24,6 +24,7 @@ namespace HotelHub.Service
 
             var hotel =await db.Hotel.FirstOrDefaultAsync(x => x.HotelID == hotelid);
             return hotel;
+
         } 
         public async Task Update(Hotel hotel)
         {

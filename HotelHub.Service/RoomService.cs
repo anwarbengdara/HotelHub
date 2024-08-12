@@ -74,6 +74,7 @@ namespace HotelHub.Service
                 tmp.Price = room.Price;
                 tmp.IsAvailable = room.IsAvailable;
 
+
                await db.SaveChangesAsync();
             }
         }

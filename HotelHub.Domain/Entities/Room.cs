@@ -9,13 +9,21 @@ namespace HotelHub.Domain.entities
 {
     public class Room
     {
-        public int RoomID { get; set; }              // معرف فريد لكل غرفة (Primary Key)
+        public Room()
+        {
+            HotelId = 1;
+        }
+        public int RoomID { get; set; }              
         [MaxLength(24)]
-        public string RoomNumber { get; set; }       // رقم الغرفة 
+        public string RoomNumber { get; set; }      
         [MaxLength(24)]
-        public string Type { get; set; }             // نوع الغرفة 
-        public decimal Price { get; set; }           // سعر الغرفة 
-        public bool IsAvailable { get; set; }        // مطلوب تحديد ما إذا كانت الغرفة متوفرة أم لا 
-        public Hotel Hotel { get; set; }             // العلاقة مع الفندق
+        public string Type { get; set; }             
+        public decimal Price { get; set; }           
+        public bool IsAvailable { get; set; }       
+        public int HotelId { get; set; }
+
+        public bool AirCondition { get; set; }
+
+        public Hotel Hotel { get; set; }            
     }
 }

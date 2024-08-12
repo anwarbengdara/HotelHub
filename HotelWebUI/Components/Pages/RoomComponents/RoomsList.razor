@@ -7,7 +7,7 @@
 
 <h3>Rooms</h3>
 
-<button class="btn btn-primary" @onclick="ShowAddModal">Add New Book</button>
+<button class="btn btn-primary" @onclick="ShowAddModal">Add New Room</button>
 
 @if (rooms == null)
 {
@@ -23,6 +23,7 @@ else
             <th>Type</th>
             <th>Price</th>
             <th>IsAvailable</th>
+            <th>AirCondition</th>
         </tr>
     </thead>
     <tbody>
@@ -33,6 +34,7 @@ else
                 <td>@room.Type</td>
                 <td>@room.Price</td>
                 <td>@room.IsAvailable</td>
+                <td>@room.AirCondition</td>
                 <td>
                     <button class="btn btn-secondary" @onclick="() => ShowEditModal(room)">Edit</button>
                     <button class="btn btn-danger" @onclick="() => DeleteRoom(room)">Delete</button>
